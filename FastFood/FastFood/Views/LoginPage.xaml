@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:FastFood.Components"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:FastFood.Extensions"
+    x:Class="FastFood.Views.LoginPage"
+    ios:Page.UseSafeArea="True"
+    BackgroundImageSource="{local:ImageResource FastFood.Resources.Images.back.png}">
+
+    <StackLayout>
+        <StackLayout>
+            <components:OutlinedMaterialEntry
+                PlaceholderText="Username"
+                Keyboard="Email"
+                ReturnType="Next"
+                LeadingIcon="{local:ImageResource FastFood.Resources.Images.ic_user.png}"
+                Margin="75, 150, 75, 0"
+                Text="{Binding Users.username}"
+                IsEnabled="{Binding IsEnabled}"/>
+
+            <components:OutlinedMaterialEntry
+                PlaceholderText="Password"
+                Keyboard="Default"
+                ReturnType="Next"
+                IsPassword="True" 
+                LeadingIcon="{local:ImageResource FastFood.Resources.Images.ic_password.png}"
+                Margin="75, 0, 75, 0"
+                Text="{Binding Users.password}"
+                IsEnabled="{Binding IsEnabled}"/>
+
+            <Button
+                Visual="Material"
+                BackgroundColor="DodgerBlue"
+                Text="Login"
+                Margin="75, 0, 75, 0"
+                Command="{Binding LoginCommand}"
+                IsEnabled="{Binding IsEnabled}"/>
+
+            <ActivityIndicator x:Name="activity"  
+                IsRunning="{Binding IsLoading}"  
+                IsEnabled="{Binding IsLoading}"  
+                IsVisible="{Binding IsLoading}"  
+                Color="DodgerBlue"  
+                BackgroundColor="Transparent"
+                Scale="2"
+                Margin="50"/>
+            
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

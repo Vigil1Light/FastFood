@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extensions="clr-namespace:FastFood.Extensions"
+             x:Class="FastFood.MainPage"
+             xmlns:local="clr-namespace:FastFood.Extensions">
+    <ContentPage.Resources>
+        <extensions:EmbeddedToImageSourceConverter x:Key="imageConverter" />
+    </ContentPage.Resources>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="Center">
+            <ImageButton Source="{local:ImageResource FastFood.Resources.Images.ic_home.png}"  Command="{Binding BackCommand}" 
+                         BackgroundColor="Transparent"
+                         HorizontalOptions="Center"
+                         VerticalOptions="CenterAndExpand"/>
+            <Label Text="{Binding HeaderText}" TextColor="White" FontSize="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <StackLayout>
+        <Grid HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand">
+            <ListView x:Name="lstMenus" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand"
+                SeparatorColor="LightGray" SeparatorVisibility="Default" HasUnevenRows="True"
+                ItemTapped="lstMenus_ItemTapped"
+                BackgroundColor="LightCyan">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" MinimumHeightRequest="100">
+                                <Image Source="{Binding menuImage, Converter={StaticResource imageConverter}, ConverterParameter='FastFood.Resources.Images.Symbolic'}" WidthRequest="100" HeightRequest="75">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                        Tapped="OnImageTapped"
+                                        NumberOfTapsRequired="1" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <StackLayout Orientation="Vertical" Padding="1" VerticalOptions="Center">
+                                    <Label Text="{Binding menuType}" FontSize="25" TextColor="OrangeRed" FontAttributes="Bold"/>
+                                    <Label Text="{Binding menuLists}" FontSize="15" TextColor="DarkGray"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ActivityIndicator HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           x:Name="activity"
+                           Color="OrangeRed"  
+                           BackgroundColor="Transparent"
+                           Scale="2"
+                           IsRunning="False"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

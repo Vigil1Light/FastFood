@@ -1,0 +1,88 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <ProduceReferenceAssemblyInOutDir>true</ProduceReferenceAssemblyInOutDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fonts\FontAwesome5Regular.otf" />
+    <None Remove="Resources\Images\back.png" />
+    <None Remove="Resources\Images\banner.png" />
+    <None Remove="Resources\Images\ic_error.png" />
+    <None Remove="Resources\Images\ic_eye_close.png" />
+    <None Remove="Resources\Images\ic_eye_open.png" />
+    <None Remove="Resources\Images\ic_home.png" />
+    <None Remove="Resources\Images\ic_password.png" />
+    <None Remove="Resources\Images\ic_user.png" />
+    <None Remove="Resources\Images\Symbolic\chinese_food.jpg" />
+    <None Remove="Resources\Images\Symbolic\french_food.jpg" />
+    <None Remove="Resources\Images\Symbolic\hamburger.jpg" />
+    <None Remove="Resources\Images\Symbolic\italian_food.jpg" />
+    <None Remove="Resources\Images\Symbolic\japanese_food.jpg" />
+    <None Remove="Resources\Images\Symbolic\mcdonald%27s.jpg" />
+    <None Remove="Resources\Images\Symbolic\mexican_food.jpg" />
+    <None Remove="Resources\Images\Symbolic\subway.jpg" />
+    <None Remove="Resources\Images\Symbolic\tacos.jpg" />
+    <None Remove="Resources\Images\Symbolic\thailand_food.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\FontAwesome5Regular.otf" />
+    <EmbeddedResource Include="Resources\Images\back.png" />
+    <EmbeddedResource Include="Resources\Images\ic_error.png" />
+    <EmbeddedResource Include="Resources\Images\ic_eye_close.png" />
+    <EmbeddedResource Include="Resources\Images\ic_eye_open.png" />
+    <EmbeddedResource Include="Resources\Images\ic_home.png" />
+    <EmbeddedResource Include="Resources\Images\ic_password.png" />
+    <EmbeddedResource Include="Resources\Images\ic_user.png" />
+    <EmbeddedResource Include="Resources\Images\Symbolic\chinese_food.jpg" />
+    <EmbeddedResource Include="Resources\Images\Symbolic\french_food.jpg" />
+    <EmbeddedResource Include="Resources\Images\Symbolic\hamburger.jpg" />
+    <EmbeddedResource Include="Resources\Images\Symbolic\italian_food.jpg" />
+    <EmbeddedResource Include="Resources\Images\Symbolic\japanese_food.jpg" />
+    <EmbeddedResource Include="Resources\Images\Symbolic\mcdonald's.jpg" />
+    <EmbeddedResource Include="Resources\Images\Symbolic\mexican_food.jpg" />
+    <EmbeddedResource Include="Resources\Images\Symbolic\subway.jpg" />
+    <EmbeddedResource Include="Resources\Images\Symbolic\tacos.jpg" />
+    <EmbeddedResource Include="Resources\Images\Symbolic\thailand_food.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.54.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.2012" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v13.0\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Components\OutlinedMaterialEntry.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\EntryOutlined.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\TogglePasswordEntry.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\IngreditPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

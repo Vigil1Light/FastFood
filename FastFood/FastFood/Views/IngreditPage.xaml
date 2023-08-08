@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FastFood.Views.IngreditPage"
+             Title="{Binding MenuName}">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+        <ListView x:Name="lstIngredits" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand"
+            SeparatorColor="LightGray" SeparatorVisibility="Default" HasUnevenRows="True"
+            ItemTapped="LstIngredits_ItemTapped"
+            BackgroundColor="LightCyan">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Padding="1" VerticalOptions="Center">
+                            <Label Text="{Binding ingreditName}" FontSize="25" TextColor="MediumSlateBlue" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
