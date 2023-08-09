@@ -14,7 +14,7 @@
                          BackgroundColor="Transparent"
                          HorizontalOptions="Center"
                          VerticalOptions="CenterAndExpand"/>
-            <Label Text="{Binding HeaderText}" TextColor="White" FontSize="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label Text="{Binding HeaderText}" TextColor="SlateBlue" FontSize="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
         </StackLayout>
     </NavigationPage.TitleView>
     <StackLayout>
