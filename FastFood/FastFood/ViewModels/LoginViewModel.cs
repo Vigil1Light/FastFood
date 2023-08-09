@@ -100,7 +100,7 @@ namespace FastFood.ViewModels
                     if (ex.Message.Contains("AADSTS50055"))
                     {
                         UpdateUI(true);
-                        DependencyService.Get<Toast>().Show("Your password is expired\nyou need to change password next sign in");
+                        DependencyService.Get<Toast>().Show("Login success");
                         //App.Current.MainPage = new MainPage(Users);
                         App.Current.MainPage = new NavigationPage(new MainPage(Users));
                     }
